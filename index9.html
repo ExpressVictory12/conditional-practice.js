@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let salary = {
+            John : 100,
+            Ann : 160,
+            Peter : 100,
+        }
+
+        sum = 0;
+
+        for(let key in salary){
+            sum += salary[key]
+        }
+
+        alert(sum)
+
+        //Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+
+
+
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        }
+
+        function multiplyNumeric(menu){
+
+
+            for(let key in menu){
+                if(typeof menu[key] == 'number'){
+                    menu[key] *= 2
+                }
+            }
+
+            console.log(menu[key])
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    const cat = {
+      name : 'Bertie',
+      breed : 'Cymric',
+      color : 'white',
+      greeting: function() {
+        return `Meow, said ${this.name} the ${this.color} cat`
+      }
+    };
+
+    const anotherCat = {
+      name : 'Bob',
+      breed : 'Cymric',
+      color : 'black',
+      greeting: function() {
+        return `Meow, said ${this.name} the ${this.color} cat`
+      }
+    };
+
+    function createPerson(name){
+      const obj =  {}
+      obj.name = name;
+
+      obj.introduceSelf = function(){
+        console.log(`hi, i'm ${this.name}`)
+      }
+
+      return obj;
+    }
+
+    // let salva = createPerson(salva)
+    // salva.name = 'salva';
+    // salva.introduceSelf()
+
+   //OBJECT CONSTRUCTORS
+    function Cat(name, breed, color){
+      let catType = {}
+      catType.name = name;
+      catType.breed = breed;
+      catType.color = color;
+
+      catType.greeting = function () {
+          return `Hello, said ${ this.name } the ${this.color} ${ this.breed } cat.`;
+      }     
+      
+      return catType
+    };
+    
+    const cat1 = Cat('Bertie','Cymric','white');
+    console.log(cat1.greeting());
+
+    const cat2 = Cat('Elfie','Aphrodite Giant','ginger')
+    console.log(cat2.greeting());
+    
+    
+
+//   const cat1 = {
+//   name : 'Bertie',
+//   breed : 'Cymric',
+//   color : 'white',
+ 
+// }
+
+// const cat2 = {
+//   name : 'Elfie',
+//   breed : 'Aphrodite Giant',
+//   color : 'ginger',
+ 
+// }
+
+
+
+
+// cat2.greeting();
+
+
+
+
+    // Add your code here
+    let catName 
+
+    catName = cat.name
+    console.log(cat.greeting());
+    console.log(anotherCat.greeting());
+    cat.color = 'black'
+
+    // console.log(cat)
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+
+    para1.textContent = `The cat's name is ${ catName }.`;
+    para2.textContent = `The cat's color is ${ cat.color }.`;
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+
+
+
+
+
+    // const FavoriteBand = {
+    //     name : 'Migos',
+    //     nationality : 'U.S.A',
+    //     genre : 'hip-pop',
+    //     members : ['quavo', 'offset', 'takeoff'],
+    //     formed : 2018,
+    //     split : false,
+    //     album : [
+    //         [
+    //             {albumName : "cultureI"},
+    //             { yearOfRelease : 2017}
+    //         ],
+    //         [
+    //             {albumName : "cultureII"},
+    //             { yearOfRelease : 2019}
+    //         ]
+    //     ],
+
+    //     bandInfo : function(){
+    //         let info = `
+    //         the ${this.name} is a very popular trio-band from the ${this.nationality}, that has gained global traction with their unique style in the ${this.genre}\ the founders ${this.members}, ${this.members[0]} is the group leader, since their famous brakout hit in ${this.formed}, the trio has bagged many awards \
+    //         and top-rating, they released some great projects but their firsts in cosequtive year ${this.album[0][0]['albumName']} in the year ${this.album[0][1]['yearOfRelease']}\ and ${this.album[1][0]['albumName']} in the year ${this.album[1][1]['yearOfRelease']}`
+    //        return info
+    //     }
+    // };
+
+    // // console.log(FavoriteBand["album"][0][0]["albumName"])
+
+
+    // console.log(FavoriteBand.bandInfo())
+
+    
+  </script>
+
+</html>

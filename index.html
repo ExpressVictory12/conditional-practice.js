@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <label for="search">Search by contact name: </label>
+    <input id="search" type="text" />
+    <button>Search</button>
+
+    <p></p>
+
+  </body>
+  <script>
+
+  const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+
+    const search = document.querySelector('input')
+    const btn = document.querySelector('button')
+    const para = document.querySelector('p')
+
+    btn.addEventListener('click', () =>{
+      const searchName = search.value.toLowerCase()
+      search.value = ''
+      // search.focus()
+      para.textContent = '';
+
+      for(contact of contacts){
+        const splitContact = contact.split(":");
+        if(splitContact[0].toLowerCase() === searchName){
+          para.textContent = `${splitContact[0]}'s' number ${splitContact[1]}.`
+          break
+        }
+        if(searchName === ''){
+          para.textContent = 'contact not found'
+        };
+      };
+    });
+
+
+//     const para = document.querySelector('p');
+//     const input = document.querySelector('input');
+//     const btn = document.querySelector('button');
+
+// btn.addEventListener('click', () => {
+//   const searchName = input.value.toLowerCase();
+//   input.value = '';
+//   input.focus();
+//   para.textContent = '';
+//   for (const contact of contacts) {
+//     const splitContact = contact.split(':');
+//     if (splitContact[0].toLowerCase() === searchName) {
+//       para.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+//       break;
+//     }
+//   }
+//   if (para.textContent === '') {
+//    para.textContent = 'Contact not found.';
+//  }
+// });
+    
+
+  </script>
+
+</html>
